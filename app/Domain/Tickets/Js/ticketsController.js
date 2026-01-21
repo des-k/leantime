@@ -250,7 +250,7 @@ leantime.ticketsController = (function () {
                   //    Baru kita kerjain ubah namanya
                   return {
                     ...task,
-                    name: task.name + " : " + task.status
+                    name: (task.status) ? (task.name + " : " + task.status) : task.name
                   };
                 });
                 
