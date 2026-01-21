@@ -5,6 +5,7 @@ foreach ($__data as $var => $val) {
 }
 $milestones = $tpl->get('milestones');
 $timelineTasks = $tpl->get('timelineTasks');
+$statusLabels = $tpl->get('statusLabels');
 
 echo $tpl->displayNotification();
 
@@ -157,7 +158,7 @@ if ($roadmapView == 'Day') {
                         dependencies :'".implode(',', $dependencyList)."',
                         custom_class :'',
                         type: '".strtolower($mlst->type)."',
-                        status: '".($statusLabels[$mlst->status]['label'] ?? '')."',
+                        status: '".($statusLabels[$mlst->status]['name'] ?? 'New')."',
                         bg_color: '".$color."',
                         thumbnail: '".BASE_URL.'/api/users?profileImage='.$mlst->editorId."',
                         sortIndex: ".$sortIndex.'
