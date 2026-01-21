@@ -295,11 +295,8 @@ leantime.ticketsController = (function () {
                                      '<a href="#/tickets/editMilestone/' + task.id + '" ><span class="fa fa-map"></span> ' + leantime.i18n.__("links.edit_milestone") + '</a> | ' +
                                      '<a href="' + leantime.appUrl + '/tickets/showKanban?milestone=' + task.id + '"><span class="fa-pushpin"></span> ' + leantime.i18n.__("links.view_todos") + '</a> ';
                                 } else {
-                                    var taskNameAndStatus = task.name;
-                                    if(task.status) {
-                                        taskNameAndStatus += " : " + task.status;
-                                    }
-                                    popUpHTML += '<h4><a href="#/tickets/showTicket/' + task.id + '">' + htmlEntities(taskNameAndStatus) + '</a></h4>';
+                                    
+                                    popUpHTML += '<h4><a href="#/tickets/showTicket/' + task.id + '">' + htmlEntities(task.name) + '</a></h4>';
 
                                     popUpHTML += '<br /> <a href="#/tickets/showTicket/' + task.id + '"><span class="fa fa-thumb-tack"></span> ' + leantime.i18n.__("links.edit_todo") + '</a> ';
                                 }
@@ -379,11 +376,8 @@ leantime.ticketsController = (function () {
                                         '' + Math.round(task.progress) + '%</p> ' +
                                         '<a href="' + leantime.appUrl + '/tickets/showKanban?milestone=' + task.id + '"><span class="fa-pushpin"></span> ' + leantime.i18n.__("links.view_todos") + '</a> ';
                                 } else {
-                                    var taskNameAndStatus = task.name;
-                                    if(task.status) {
-                                        taskNameAndStatus += " : " + task.status;
-                                    }
-                                    popUpHTML += '<h4><a href="#/tickets/showTicket/' + task.id + '">' + htmlEntities(taskNameAndStatus) + '</a></h4><br /> ' +
+                                   
+                                    popUpHTML += '<h4><a href="#/tickets/showTicket/' + task.id + '">' + htmlEntities(task.name) + '</a></h4><br /> ' +
                                         '<a href="#/tickets/showTicket/' + task.id + '"><span class="fa fa-thumb-tack"></span> ' + leantime.i18n.__("links.edit_todo") + '</a> ';
                                 }
 
