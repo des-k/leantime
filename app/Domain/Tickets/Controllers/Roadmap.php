@@ -58,7 +58,7 @@ class Roadmap extends Controller
         $allProjectMilestones = $this->ticketService->getAllMilestones($template_assignments['searchCriteria'], 'standard');
         $allProjectMilestones = $this->ticketService->getBulkMilestoneProgress($allProjectMilestones);
 
-        $statusLabels = $this->ticketService->getStatusLabels();
+        $statusLabels = $this->ticketService->getStatusLabels(session('currentProject'));
         $this->tpl->assign('statusLabels', $statusLabels);
         
         $this->tpl->assign('timelineTasks', $allProjectMilestones);
