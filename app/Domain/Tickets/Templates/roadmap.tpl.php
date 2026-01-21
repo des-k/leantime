@@ -159,6 +159,7 @@ if ($roadmapView == 'Day') {
                         custom_class :'',
                         type: '".strtolower($mlst->type)."',
                         status: '".($statusLabels[$mlst->status]['name'] ?? 'New')."',
+                        statusClass: '".($statusLabels[$mlst->status]['class'] ?? 'label-default')."',
                         bg_color: '".$color."',
                         thumbnail: '".BASE_URL.'/api/users?profileImage='.$mlst->editorId."',
                         sortIndex: ".$sortIndex.'
