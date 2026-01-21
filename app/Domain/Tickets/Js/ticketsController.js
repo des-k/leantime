@@ -284,11 +284,10 @@ leantime.ticketsController = (function () {
                                     popUpHTML += '<h4><a href="#/tickets/showTicket/' + task.id + '">' + htmlEntities(task.name) + '</a></h4>';
 
                                     if (task.status) {
-                                        popUpHTML += '<div style="margin-bottom:10px;">' +
-                                                     '<span class="label ' + task.statusClass + '">' + 
+                                        popUpHTML +='<span class="label ' + task.statusClass + '">' + 
                                                      'Status: ' + task.status + 
-                                                     '</span>' +
-                                                     '</div>';
+                                                     '</span>';
+                                                     
                                     }
 
                                     popUpHTML += '<br /> <a href="#/tickets/showTicket/' + task.id + '"><span class="fa fa-thumb-tack"></span> ' + leantime.i18n.__("links.edit_todo") + '</a> ';
