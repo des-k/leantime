@@ -157,6 +157,7 @@ if ($roadmapView == 'Day') {
                         dependencies :'".implode(',', $dependencyList)."',
                         custom_class :'',
                         type: '".strtolower($mlst->type)."',
+                        status: '".($statusLabels[$mlst->status]['label'] ?? '')."',
                         bg_color: '".$color."',
                         thumbnail: '".BASE_URL.'/api/users?profileImage='.$mlst->editorId."',
                         sortIndex: ".$sortIndex.'
