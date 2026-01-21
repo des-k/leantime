@@ -240,11 +240,25 @@ leantime.ticketsController = (function () {
 
         jQuery(document).ready(
             function () {
+                const updatedTasks = tasks.map(task => {
+                  // 1. Cek: Kalau milestone, langsung kembalikan aslinya (return) & STOP di sini
+                  if (task.type === 'milestone') {
+                    return task; 
+                  }
+                
+                  // 2. Di bawah ini adalah "Else"-nya (otomatis jalan kalau lolos dari if di atas)
+                  //    Baru kita kerjain ubah namanya
+                  return {
+                    ...task,
+                    name: task.name + " : " + task.status
+                  };
+                });
+                
 
                 if (readonly === false) {
                     var gantt_chart = new Gantt(
                         "#gantt",
-                        tasks,
+                        updatedTasks,
                         {
                             header_height: 55,
                             column_width: 20,
@@ -339,7 +353,7 @@ leantime.ticketsController = (function () {
                 } else {
                     var gantt_chart = new Gantt(
                         "#gantt",
-                        tasks,
+                        updatedTasks,
                         {
                             readonlyGantt: true,
                             resizing: false,
