@@ -245,12 +245,12 @@ leantime.ticketsController = (function () {
                   if (task.type === 'milestone') {
                     return task; 
                   }
-                
-                  // 2. Di bawah ini adalah "Else"-nya (otomatis jalan kalau lolos dari if di atas)
+
                   //    Baru kita kerjain ubah namanya
                   return {
                     ...task,
-                    name: (task.status) ? (task.name + " : " + task.status) : task.name
+                    name: (task.status) ? (task.name + " : " + task.status) : task.name,
+                    custom_class : (task.statusClass) ? task.statusClass : task.custom_class,
                   };
                 });
                 
