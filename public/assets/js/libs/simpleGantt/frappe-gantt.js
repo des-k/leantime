@@ -880,7 +880,20 @@ var Gantt = (function () {
             const x_offset_label_img = this.image_size + 10;
             const y_offset_label_img = (bar.getHeight() - this.image_size) / 2;
 
-            if (label.getBBox().width > bar.getWidth()) {
+            
+            //if (label.getBBox().width > bar.getWidth()) {
+            // UBAH MENJADI:
+            // Kita hitung ruang efektif. 
+            // Jika ada gambar (thumbnail), ruang teks berkurang.
+            let effectiveWidth = bar.getWidth(); 
+            if (img) {
+                effectiveWidth -= (this.image_size + 10); // Kurangi ruang untuk gambar & padding
+            } else {
+                effectiveWidth -= 10; // Kurangi padding kiri kanan standar (5+5)
+            }
+
+            // Logika baru: Pindah keluar HANYA jika teks benar-benar lebih besar dari ruang efektif
+            if (label.getBBox().width > effectiveWidth) {
                 label.classList.add('big');
 
                 if (img) {
