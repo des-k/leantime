@@ -113,3 +113,59 @@ body .gantt #details .details-container {
 .gantt .grid-row {
     fill: transparent;
 }
+
+/* Purple */
+.gantt .bar-wrapper.label-purple .bar {
+    fill: var(--purple) !important;
+}
+
+/* Pink */
+.gantt .bar-wrapper.label-pink .bar {
+    fill: var(--pink) !important;
+}
+
+/* Darker Blue */
+.gantt .bar-wrapper.label-darker-blue .bar {
+    fill: var(--darker-blue) !important;
+}
+
+/* Info (Dark Blue) */
+.gantt .bar-wrapper.label-info .bar {
+    fill: var(--dark-blue) !important;
+}
+
+/* Blue */
+.gantt .bar-wrapper.label-blue .bar {
+    fill: var(--blue) !important;
+}
+
+/* Dark Green */
+.gantt .bar-wrapper.label-dark-green .bar {
+    fill: var(--dark-green) !important;
+}
+
+/* Success (Green) */
+.gantt .bar-wrapper.label-success .bar {
+    fill: var(--green) !important;
+}
+
+/* Warning (Yellow) */
+.gantt .bar-wrapper.label-warning .bar {
+    fill: var(--yellow) !important;
+}
+
+/* Brown */
+.gantt .bar-wrapper.label-brown .bar {
+    fill: var(--brown) !important;
+}
+
+/* Danger (Dark Red) */
+.gantt .bar-wrapper.label-danger .bar {
+    fill: var(--dark-red) !important;
+}
+
+/* Important (Red) */
+.gantt .bar-wrapper.label-important .bar {
+    fill: var(--red) !important;
+}
+
