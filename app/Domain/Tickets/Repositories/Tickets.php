@@ -1658,4 +1658,21 @@ class Tickets
             ->where('relationship', EntityRelationshipEnum::Collaborator->value)
             ->delete();
     }
+
+    /**
+     * bulkUpdateSortIndex - Updates the sort index of multiple tickets
+     *
+     * @param array $tickets Array of ticketId => sortIndex
+     * @return bool
+     */
+    public function bulkUpdateSortIndex($tickets)
+    {
+        foreach ($tickets as $id => $sortIndex) {
+            $this->connection->table('zp_tickets')
+                ->where('id', $id)
+                ->update(['sortindex' => $sortIndex]);
+        }
+
+        return true;
+    }
 }
